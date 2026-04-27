@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landslide Predictor</title>
+
+<style>
+    /* Body and Header Styles */
+body {
+font-family: Arial, sans-serif;
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Landslide_in_Cusco%2C_Peru_-_2018.jpg);
+background-size: cover;
+margin: 0;
+padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    max-width: 350px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 20px;
+      position: center;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="file"] {
+width: 325px;
+margin-bottom: 10px;
+}
+
+label {
+display: block;
+font-weight: bold;
+margin-top: 10px;
+}
+
+input[type="number"] {
+width: 325px;
+padding: 8px;
+margin: 5px 0;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+/* Button Style */
+input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+/* Links and Clickable Text */
+a {
+color: #4CAF50;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.clickable-text {
+cursor: pointer;
+}
+
+/* Iframe Styles */
+iframe {
+display: none;
+}
+
+/* Result Styles */
+#result {
+margin-top: 10px;
+text-align: center;
+font-weight: bold;
+color: #007BFF;
+}
+
+</style>
+</head>
+<body>
+    <h1>Landslide Predictor</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data" target="upload_target">
+        <input type="file" name="image" accept="image/*">
+        <input type="submit" value="Upload Image">
+    </form>
+    <iframe name="upload_target" style="display:none;"></iframe>
+    <div id="result"></div>
+
+    <script>
+        function handleUploadResponse(response) {
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = response;
+        }
+    </script>
+    <form method="post" action="/process">
+        <H4><a href="https://support.apple.com/en-in/guide/iphone/iphbd435673d/ios">How to find slope?</a></H4>
+        <label for="slope">Slope:</label>
+        <input type="number" name="slope" id="slope" placeholder="Enter Slope" step="any"><br>
+        <div style="color: rgb(6, 4, 4);">
+            <div class="clickable-text" onclick="fun()">
+                <h4 class="text"><B></h4><a href="#">Want to know your location's coordinates?</a></B></h4>
+        
+            <style>
+                .clickable-text {
+                    cursor: pointer;
+                }
+            </style>
+            <h4 id="ans" style="color: rgb(16, 16, 6);"></h4>
+        
+            <script src="index.js"></script>
+        <label for="latitude">Latitude:</label>
+        <input type="number" name="latitude" id="latitude" placeholder="Enter latitude" step="any"><br>
+        <label for="longitude">Longitude:</label>
+        <input type="number" name="longitude" id="longitude" placeholder="Enter longitude" step="any"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

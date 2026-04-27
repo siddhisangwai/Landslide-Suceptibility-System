@@ -1,0 +1,5 @@
+yello soil-sandstone-1
+black soil-silty-2
+laterite soil-shale-3
+peat soil-collivium-4
+cinder soil-allivium-5
